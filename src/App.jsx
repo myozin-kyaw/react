@@ -1,4 +1,5 @@
 import ConditionalComponent from "./components/ConditionalComponent";
+import Counter from "./components/Counter";
 import Fruits from "./components/Fruits";
 import Hello from "./components/Hello";
 import Message from "./components/Message";
@@ -16,11 +17,12 @@ function App() {
   };
   return (
     <>
-      <Hello person={myozin} />
+      {/* <Hello person={myozin} />
       <Hello person={deedee} />
       <Fruits />
       <ConditionalComponent />
-      <Message />
+      <Message /> */}
+      <Counter />
     </>
   );
 }
