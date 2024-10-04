@@ -11,18 +11,20 @@ export default function Todo() {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input
           type="text"
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
         />
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
 
-      {todos.map((todo) => (
+      <TodoItem />
+
+      {/* {todos.map((todo) => (
         <TodoItem key={todo} todo={todo} />
-      ))}
+      ))} */}
     </div>
   );
 }
