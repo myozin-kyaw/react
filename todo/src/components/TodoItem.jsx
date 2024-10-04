@@ -2,12 +2,20 @@ export default function TodoItem() {
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-md w-full sm:w-1/2 todo-container px-3 py-8">
-        {/* todo__input */}
-        <input
-          className="w-full border p-2 mb-4"
-          type="text"
-          placeholder="add todo"
-        />
+        <div className="flex flex-col gap-3 items-center justify-center mb-5">
+          {/* todo__input */}
+          <input
+            className="w-full border p-2"
+            type="text"
+            placeholder="Keep your todo..."
+          />
+          <button
+            type="button"
+            className="w-full px-3 py-2 text-xs font-medium text-center text-white bg-slate-700 rounded-lg hover:bg-slate-800 focus:ring-2 focus:outline-none focus:ring-gray-300 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-gray-800"
+          >
+            Submit
+          </button>
+        </div>
 
         {/* todo-list */}
         <ul className="flex flex-col space-y-2 text-gray-800">
@@ -40,6 +48,9 @@ export default function TodoItem() {
               >
                 Checked state
               </label>
+              <div className="p-2 border-none rounded-full text-white bg-red-500">
+                -
+              </div>
             </div>
             <i
               className="fa fa-minus-circle ml-auto text-red-600"
