@@ -4,7 +4,7 @@ export default function TodoForm({ todos, setTodos }) {
   const [todo, setTodo] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
-    setTodos([...todos, todo]);
+    setTodos([...todos, { id: todos.length + 1, name: todo }]);
     setTodo("");
   }
   return (

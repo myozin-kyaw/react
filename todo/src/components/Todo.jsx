@@ -12,7 +12,7 @@ export default function Todo() {
         <ul className="flex flex-col space-y-2 text-gray-800">
           {todos.map((todo) => (
             <TodoItem
-              key={todo}
+              key={todo.id}
               todo={todo}
               todos={todos}
               setTodos={setTodos}

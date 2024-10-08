@@ -1,7 +1,6 @@
 export default function TodoItem({ todo, todos, setTodos }) {
   function handleDelete() {
-    todos = todos.filter((item) => item !== todo);
-    setTodos(todos);
+    setTodos(todos.filter((item) => item.id !== todo.id));
   }
   return (
     <li className="flex justify-between items-center border p-4">
@@ -31,7 +30,7 @@ export default function TodoItem({ todo, todos, setTodos }) {
           htmlFor="checked-checkbox"
           className="ms-2 text-sm cursor-pointer select-none font-medium text-gray-900 dark:text-gray-300 relative"
         >
-          {todo}
+          {todo.name}
         </label>
       </div>
       <button
