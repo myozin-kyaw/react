@@ -2,12 +2,20 @@ export default function TodoItem({ todo, todos, setTodos }) {
   function handleDelete() {
     setTodos(todos.filter((item) => item.id !== todo.id));
   }
+
+  function handleChecked(e) {
+    setTodos(todos.map(item => {
+      item.id === todo.id ? { ...todo, isCompleted: e.target.checked } : todo
+    }));
+  }
   return (
-    <li className="flex justify-between items-center border p-4">
-      <div className="flex items-center cursor-pointer relative">
+    <li className="flex items-center justify-between p-4 border">
+      <div className="relative flex items-center cursor-pointer">
         <input
           type="checkbox"
-          className="peer h-6 w-6 cursor-pointer transition-all appearance-none rounded-full bg-slate-100 shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
+          onChange={handleChecked}
+          value={todo.isCompleted}
+          className="w-6 h-6 transition-all border rounded-full shadow appearance-none cursor-pointer peer bg-slate-100 hover:shadow-md border-slate-300 checked:bg-slate-800 checked:border-slate-800"
           id="checked-checkbox"
         />
         <div className="absolute text-white left-[5px] top-[5px] opacity-0 peer-checked:opacity-100 pointer-events-none">
@@ -28,7 +36,7 @@ export default function TodoItem({ todo, todos, setTodos }) {
         </div>
         <label
           htmlFor="checked-checkbox"
-          className="ms-2 text-sm cursor-pointer select-none font-medium text-gray-900 dark:text-gray-300 relative"
+          className="relative text-sm font-medium cursor-pointer select-none text-slate-700 peer-checked:line-through ms-2 dark:text-slate-700"
         >
           {todo.name}
         </label>
@@ -36,7 +44,7 @@ export default function TodoItem({ todo, todos, setTodos }) {
       <button
         onClick={handleDelete}
         type="button"
-        className="w-5 h-5 flex items-end cursor-pointer select-none justify-center border-none rounded-full text-white bg-red-800"
+        className="flex items-end justify-center w-5 h-5 text-white bg-red-800 border-none rounded-full cursor-pointer select-none"
       >
         -
       </button>
