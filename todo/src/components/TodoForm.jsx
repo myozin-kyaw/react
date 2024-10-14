@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 export default function TodoForm({ todos, setTodos }) {
-  const [todo, setTodo] = useState({id: "", name: "", isCompleted: false});
+  const [todo, setTodo] = useState({ id: "", name: "", isCompleted: false });
   function handleSubmit(e) {
     e.preventDefault();
     setTodos([...todos, todo]);
-    setTodo({id: "", name: "", isCompleted: false});
+    setTodo({ id: "", name: "", isCompleted: false });
   }
   return (
     <form
@@ -18,7 +18,13 @@ export default function TodoForm({ todos, setTodos }) {
         type="text"
         required
         placeholder="Keep your todo..."
-        onChange={(e) => setTodo({id: todos.length + 1, name: e.target.value, isCompleted: false})}
+        onChange={(e) =>
+          setTodo({
+            id: todos.length + 1,
+            name: e.target.value,
+            isCompleted: false,
+          })
+        }
         value={todo.name}
       />
       <button

@@ -1,22 +1,23 @@
 export default function TodoItem({ todo, todos, setTodos }) {
-  function handleDelete() {
+  function handleDelete(todo) {
     setTodos(todos.filter((item) => item.id !== todo.id));
   }
 
-  function handleChecked(e) {
-    setTodos(todos.map(item => {
-      item.id === todo.id ? { ...todo, isCompleted: e.target.checked } : todo
-    }));
+  function handleClick(todo) {
+    const newTodos = todos.map((item) =>
+      item.id === todo.id ? { ...todo, isCompleted: !todo.isCompleted } : item
+    );
+
+    setTodos(newTodos);
   }
   return (
     <li className="flex items-center justify-between p-4 border">
       <div className="relative flex items-center cursor-pointer">
         <input
           type="checkbox"
-          onChange={handleChecked}
           value={todo.isCompleted}
           className="w-6 h-6 transition-all border rounded-full shadow appearance-none cursor-pointer peer bg-slate-100 hover:shadow-md border-slate-300 checked:bg-slate-800 checked:border-slate-800"
-          id="checked-checkbox"
+          id={"todo-item-" + todo.id}
         />
         <div className="absolute text-white left-[5px] top-[5px] opacity-0 peer-checked:opacity-100 pointer-events-none">
           <svg
@@ -35,14 +36,15 @@ export default function TodoItem({ todo, todos, setTodos }) {
           </svg>
         </div>
         <label
-          htmlFor="checked-checkbox"
+          htmlFor={"todo-item-" + todo.id}
+          onClick={() => handleClick(todo)}
           className="relative text-sm font-medium cursor-pointer select-none text-slate-700 peer-checked:line-through ms-2 dark:text-slate-700"
         >
           {todo.name}
         </label>
       </div>
       <button
-        onClick={handleDelete}
+        onClick={() => handleDelete(todo)}
         type="button"
         className="flex items-end justify-center w-5 h-5 text-white bg-red-800 border-none rounded-full cursor-pointer select-none"
       >
