@@ -4,6 +4,7 @@ import TodoItem from "./TodoItem";
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
+  const completedTodos = todos.filter((todo) => todo.isCompleted).length;
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-md w-full sm:w-1/2 todo-container px-3 py-8">
@@ -19,6 +20,8 @@ export default function Todo() {
             />
           ))}
         </ul>
+        Completed Todos :
+        {todos.length > 0 ? completedTodos + "/" + todos.length : ""}
       </div>
     </div>
   );
