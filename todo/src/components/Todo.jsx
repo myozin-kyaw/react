@@ -8,6 +8,9 @@ export default function Todo() {
     .slice()
     .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));
   const completedTodos = todos.filter((todo) => todo.isCompleted).length;
+
+  console.log(sortedTodos);
+
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-md w-full sm:w-1/2 todo-container px-3 py-8 space-y-5">
