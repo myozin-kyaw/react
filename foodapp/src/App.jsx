@@ -6,6 +6,7 @@ import NavBar from "./components/sections/NavBar";
 
 function App() {
   const apiKey = "b92a8d99f55846399275ec2c6a7b4926";
+  const [isRecipesQuerying, setIsRecipesQuerying] = useState(true);
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
 
@@ -16,8 +17,7 @@ function App() {
       );
       const data = await res.json();
       setRecipes(data.results);
-
-      console.log(recipes);
+      setIsRecipesQuerying(false);
     };
 
     fetchRecipes().catch(console.error);
@@ -27,7 +27,7 @@ function App() {
     <div className="mx-12">
       <NavBar />
       <Header />
-      <Body recipes={recipes} />
+      <Body recipes={recipes} isRecipesQuerying={isRecipesQuerying} />
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import Recipes from "./Recipes";
 import AdvanceFilter from "./AdvanceFilter";
 
-export default function Body({ recipes }) {
+export default function Body({ recipes, isRecipesQuerying }) {
   return (
     <div className="py-4">
       <div className="grid grid-cols-12 grid-flow-col">
@@ -9,7 +9,7 @@ export default function Body({ recipes }) {
           <AdvanceFilter />
         </div>
         <div className="col-span-10 w-auto max-h-[950px] overflow-y-scroll space-y-3">
-          <Recipes recipes={recipes} />
+          <Recipes recipes={recipes} isRecipesQuerying={isRecipesQuerying} />
 
           <div className="flex space-x-1">
             <button className="rounded-full border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2">
