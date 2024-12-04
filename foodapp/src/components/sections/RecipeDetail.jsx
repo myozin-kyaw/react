@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Spinner from "../loadings/spinner";
 import Rating from "../animations/Rating";
+import Clock from "../svgs/Clock";
+import Tags from "../utility/Tags";
 
 export default function RecipeDetail({ recipeId }) {
   const [recipeDetail, setRecipeDetail] = useState();
@@ -33,21 +35,52 @@ export default function RecipeDetail({ recipeId }) {
               className="object-cover"
             />
           </div>
-          <div className="p-4 space-y-2">
-            <h6 className="text-xl font-semibold flex flex-col justify-start gap-2">
-              <div>{recipeDetail.name}</div>
-              <div className="flex items-center gap-2">
-                <Rating rating={recipeDetail.rating} animate={true} />
-                <div className="text-sm font-medium underline text-gray-700">
-                  {recipeDetail.reviewCount} reviews
+          <div className="p-4 space-y-4">
+            <div className="flex flex-row justify-between items-center gap-2">
+              <div className="flex flex-col justify-start gap-2">
+                <h2 className="text-xl font-semibold">
+                  {recipeDetail.name} ({recipeDetail.cuisine})
+                </h2>
+                <div className="flex items-center gap-2">
+                  <Rating rating={recipeDetail.rating} animate={true} />
+                  <div className="text-sm font-medium underline">
+                    {recipeDetail.reviewCount} reviews
+                  </div>
                 </div>
               </div>
-            </h6>
-            <p className="text-slate-600 leading-normal font-light">
-              The place is close to Barceloneta Beach and bus stop just 2 min by
-              walk and near to &quot;Naviglio&quot; where you can enjoy the main
-              night life in Barcelona.
-            </p>
+              <div>
+                <Clock cookTimeMinutes={recipeDetail.cookTimeMinutes} />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-base">Ingredients</h3>
+              <ul className="list-disc pl-4">
+                {Array.from(
+                  { length: recipeDetail.ingredients.length },
+                  (_, index) => (
+                    <li key={index} className="text-sm font-light">
+                      {recipeDetail.ingredients[index]}
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-base">Instructions</h3>
+              <ul className="list-disc pl-4">
+                {Array.from(
+                  { length: recipeDetail.instructions.length },
+                  (_, index) => (
+                    <li key={index} className="text-sm font-light">
+                      {recipeDetail.instructions[index]}
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <Tags tags={recipeDetail.tags} />
+            </div>
           </div>
         </div>
       )}
