@@ -3,6 +3,7 @@ import Spinner from "../loadings/spinner";
 import Rating from "../animations/Rating";
 import Clock from "../svgs/Clock";
 import Tags from "../utility/Tags";
+import ContentList from "../utility/ContentList";
 
 export default function RecipeDetail({ recipeId }) {
   const [recipeDetail, setRecipeDetail] = useState();
@@ -53,30 +54,16 @@ export default function RecipeDetail({ recipeId }) {
               </div>
             </div>
             <div className="space-y-2">
-              <h3 className="font-semibold text-base">Ingredients</h3>
-              <ul className="list-disc pl-4">
-                {Array.from(
-                  { length: recipeDetail.ingredients.length },
-                  (_, index) => (
-                    <li key={index} className="text-sm font-light">
-                      {recipeDetail.ingredients[index]}
-                    </li>
-                  )
-                )}
-              </ul>
+              <ContentList
+                label={"Ingredients"}
+                contents={recipeDetail.ingredients}
+              />
             </div>
             <div className="space-y-2">
-              <h3 className="font-semibold text-base">Instructions</h3>
-              <ul className="list-disc pl-4">
-                {Array.from(
-                  { length: recipeDetail.instructions.length },
-                  (_, index) => (
-                    <li key={index} className="text-sm font-light">
-                      {recipeDetail.instructions[index]}
-                    </li>
-                  )
-                )}
-              </ul>
+              <ContentList
+                label={"Instructions"}
+                contents={recipeDetail.instructions}
+              />
             </div>
             <div className="space-y-2">
               <Tags tags={recipeDetail.tags} />
