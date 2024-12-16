@@ -4,6 +4,7 @@ import Rating from "../animations/Rating";
 import Clock from "../svgs/Clock";
 import Tags from "../utility/Tags";
 import ContentList from "../utility/ContentList";
+import FoodService from "../svgs/FoodService";
 
 export default function RecipeDetail({ recipeId }) {
   const [recipeDetail, setRecipeDetail] = useState();
@@ -50,8 +51,18 @@ export default function RecipeDetail({ recipeId }) {
                 </div>
               </div>
               <div>
-                <Clock cookTimeMinutes={recipeDetail.cookTimeMinutes} />
+                <Clock
+                  cookTimeMinutes={
+                    recipeDetail.cookTimeMinutes + recipeDetail.prepTimeMinutes
+                  }
+                />
               </div>
+            </div>
+            <div className="space-y-2">
+              <ContentList
+                label={"Meal Type"}
+                contents={recipeDetail.mealType}
+              />
             </div>
             <div className="space-y-2">
               <ContentList
