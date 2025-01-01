@@ -5,6 +5,10 @@ import Form from "./components/Form";
 import Fruits from "./components/Fruits";
 import Hello from "./components/Hello";
 import Message from "./components/Message";
+import HomePage from "./pages/HomePage";
+import Dashboard from "./pages/Dashboard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./Nav";
 
 function App() {
   // const myozin = {
@@ -26,7 +30,24 @@ function App() {
       <Message />
       <Counter /> */}
       {/* <Form /> */}
-      <CounterUsingReducer />
+      {/* <CounterUsingReducer /> */}
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage />}
+          ></Route>
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          ></Route>
+          <Route
+            path="*"
+            element={<h2>404 Not Found</h2>}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
