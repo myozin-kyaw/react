@@ -1,21 +1,22 @@
 import ConditionalComponent from "./components/ConditionalComponent";
 import Counter from "./components/Counter";
+import CounterUsingReducer from "./components/CounterUsingReducer";
 import Form from "./components/Form";
 import Fruits from "./components/Fruits";
 import Hello from "./components/Hello";
 import Message from "./components/Message";
 
 function App() {
-  const myozin = {
-    name: "Myo Zin",
-    message: "Hello,",
-    seatNumbers: [1, 2, 3],
-  };
-  const deedee = {
-    name: "Dee Dee",
-    message: "Hello,",
-    seatNumbers: [5, 6, 7],
-  };
+  // const myozin = {
+  //   name: "Myo Zin",
+  //   message: "Hello,",
+  //   seatNumbers: [1, 2, 3],
+  // };
+  // const deedee = {
+  //   name: "Dee Dee",
+  //   message: "Hello,",
+  //   seatNumbers: [5, 6, 7],
+  // };
   return (
     <>
       {/* <Hello person={myozin} />
@@ -24,7 +25,8 @@ function App() {
       <ConditionalComponent />
       <Message />
       <Counter /> */}
-      <Form />
+      {/* <Form /> */}
+      <CounterUsingReducer />
     </>
   );
 }
