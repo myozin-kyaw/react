@@ -7,8 +7,10 @@ import Hello from "./components/Hello";
 import Message from "./components/Message";
 import HomePage from "./pages/HomePage";
 import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
+import Settings from "./pages/Settings";
 
 function App() {
   // const myozin = {
@@ -41,7 +43,16 @@ function App() {
           <Route
             path="/dashboard"
             element={<Dashboard />}
-          ></Route>
+          >
+            <Route
+              path="profile"
+              element={<Profile />}
+            ></Route>
+            <Route
+              path="settings"
+              element={<Settings />}
+            ></Route>
+          </Route>
           <Route
             path="*"
             element={<h2>404 Not Found</h2>}
