@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Settings from "./pages/Settings";
+import Product from "./pages/Product";
 
 function App() {
   // const myozin = {
@@ -39,6 +40,10 @@ function App() {
           <Route
             path="/"
             element={<HomePage />}
+          ></Route>
+          <Route
+            path="/products/:id"
+            element={<Product />}
           ></Route>
           <Route
             path="/dashboard"
