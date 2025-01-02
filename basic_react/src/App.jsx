@@ -12,14 +12,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Settings from "./pages/Settings";
 import Product from "./pages/Product";
-import { createContext, useState } from "react";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
-
-export const userContext = createContext();
+import { UserProvider } from "./contexts/UserContext";
 
 function App() {
-  const [user, setUser] = useState("guest");
   // const myozin = {
   //   name: "Myo Zin",
   //   message: "Hello,",
@@ -71,10 +68,10 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <userContext.Provider value={{ user, setUser }}>
+      <UserProvider>
         <Login />
         <Checkout />
-      </userContext.Provider>
+      </UserProvider>
     </>
   );
 }
