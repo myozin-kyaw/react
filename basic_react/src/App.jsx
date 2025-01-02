@@ -15,6 +15,7 @@ import Product from "./pages/Product";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import { UserProvider } from "./contexts/UserContext";
+import Logout from "./pages/Logout";
 
 function App() {
   // const myozin = {
@@ -71,6 +72,7 @@ function App() {
       <UserProvider>
         <Login />
         <Checkout />
+        <Logout />
       </UserProvider>
     </>
   );
