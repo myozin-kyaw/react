@@ -3,11 +3,11 @@ import { UserContext } from "../contexts/UserContext";
 
 export default function Login() {
   const [value, setValue] = useState("");
-  const { user, setUser } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
 
   function handleSubmit(e) {
     e.preventDefault();
-    setUser(value);
+    dispatch({ type: "login", payload: value });
     setValue("");
   }
   return (
