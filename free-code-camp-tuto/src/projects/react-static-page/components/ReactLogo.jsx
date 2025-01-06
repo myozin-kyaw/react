@@ -1,9 +1,9 @@
 export default function ReactLogo() {
   return (
     <svg
-      height="2500"
+      height="40"
       viewBox="175.7 78 490.6 436.9"
-      width="2194"
+      width="40"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g fill="#61dafb">

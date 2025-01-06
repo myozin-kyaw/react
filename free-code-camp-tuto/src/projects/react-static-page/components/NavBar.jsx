@@ -5,6 +5,7 @@ export default function NavBar() {
     <header>
       <nav>
         <ReactLogo />
+        <span>ReactFacts</span>
       </nav>
     </header>
   );
