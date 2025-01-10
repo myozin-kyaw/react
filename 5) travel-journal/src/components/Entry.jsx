@@ -1,27 +1,31 @@
-import mapIcon from "../assets/images/marker.png";
+import mapIcon from "./../assets/images/marker.png";
 
 export default function Entry(props) {
-  const { image, country, link, entryTitle, tripDates, entryText } = props;
   return (
     <article className="journal-entry">
       <div className="main-image-container">
         <img
           className="main-image"
-          src={image.src}
-          alt={image.alt}
+          src={props.entry.image.src}
+          alt={props.entry.image.alt}
         />
       </div>
       <div className="info-container">
         <img
           className="marker"
           src={mapIcon}
-          alt="map icon"
+          alt="map marker icon"
         />
-        <span className="country">{country}</span>
-        <a href={link}>View on Google Map</a>
-        <h2 className="entry-title">{entryTitle}</h2>
-        <p className="trip-dates">{tripDates}</p>
-        <p className="entry-text">{entryText}</p>
+        <span className="country">{props.entry.country}</span>
+        <a
+          href={props.entry.googleMapsLink}
+          target="_blank"
+        >
+          View on Google Maps
+        </a>
+        <h2 className="entry-title">{props.entry.title}</h2>
+        <p className="trip-dates">{props.entry.dates}</p>
+        <p className="entry-text">{props.entry.text}</p>
       </div>
     </article>
   );

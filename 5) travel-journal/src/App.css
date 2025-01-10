@@ -1,38 +1,38 @@
-* {
-  box-sizing: border-box;
-}
-
 html,
 body {
   margin: 0;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 45px 80px;
+}
+
 header {
-  background-color: #f55a5a;
+  background: #f55a5a;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: #ffffff;
+  align-items: center;
+  color: white;
   height: 55px;
-  gap: 10px;
 }
 
 header > img {
   width: 24px;
+  margin-right: 7px;
 }
 
 header > h1 {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 article.journal-entry {
   display: flex;
-  justify-items: center;
-  height: 100vh;
-  width: 70%;
+  margin-bottom: 36px;
 }
 
 article.journal-entry .marker {
@@ -49,8 +49,41 @@ article.journal-entry .main-image-container {
   margin-right: 19px;
 }
 
-.main-image {
-  width: 100%;
+article.journal-entry .main-image {
   height: 100%;
+  width: 100%;
   object-fit: cover;
+}
+
+.info-container span.country {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-right: 12px;
+}
+
+.info-container a {
+  color: #2b283a;
+  font-size: 0.7rem;
+}
+
+.info-container a:visited {
+  color: #918e9b;
+}
+
+.info-container h2.entry-title {
+  margin-top: 7px;
+  margin-bottom: 17px;
+}
+
+.info-container p.trip-dates {
+  font-weight: bold;
+}
+
+.info-container p.entry-text {
+  line-height: 1.5;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
