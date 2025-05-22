@@ -1,13 +1,11 @@
-import MyButton from "./components/MyButton";
 import LessonCard from "./components/LessonCard";
+import ButtonPage from "./pages/react-components/ButtonPage";
 
 function App() {
   return (
     <>
-      <div className="m-5">
-        <MyButton />
-        <MyButton />
-        <MyButton />
+      <ButtonPage />
+      {/* <div className="m-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           <LessonCard />
           <LessonCard />
@@ -16,7 +14,7 @@ function App() {
           <LessonCard />
           <LessonCard />
         </div>
-      </div>
+      </div> */}
 
     </>
   )
