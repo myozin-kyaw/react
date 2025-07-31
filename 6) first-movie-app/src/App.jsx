@@ -65,7 +65,7 @@ function App() {
           <section className='all-movies'>
             {
               isLoading ? (
-                <p>Loading...</p>
+                <p className='text-white'>Loading...</p>
               ) : errorMessage ? (
                 <p className='text-red-500'>{errorMessage}</p>
               ) : (
