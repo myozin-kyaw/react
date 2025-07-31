@@ -63,9 +63,19 @@ function App() {
           </header>
 
           <section className='all-movies'>
-            {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
-
-            <div className='text-center text-white'>{isLoading ? 'Loading...' : 'Movies List'}</div>
+            {
+              isLoading ? (
+                <p>Loading...</p>
+              ) : errorMessage ? (
+                <p className='text-red-500'>{errorMessage}</p>
+              ) : (
+                <ul>
+                  {movieList.map((movie) => (
+                    <li key={movie.id}>{movie.title}</li>
+                  ))}
+                </ul>
+              )
+            }
           </section>
         </div>
       </div>
