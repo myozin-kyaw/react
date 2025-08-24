@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       {/* <UseStateExample/> */}
-      <UseEffectExample/>
+      {/* <UseEffectExample/> */}
     </div>
   )
 }
