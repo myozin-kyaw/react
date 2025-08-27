@@ -13,7 +13,7 @@ function App() {
       {/* <UseStateExample/> */}
       {/* <UseEffectExample/> */}
       {/* <UseContextExample/> */}
-      <UseReducerExample/>
+      {/* <UseReducerExample/> */}
     </div>
   )
 }
