@@ -6,6 +6,7 @@ import UseContextExample from './components/UseContextExample'
 import UseReducerExample from './components/UseReducerExample'
 import UseRefExample from './components/UseRefExample'
 import UseImperativeHandleExample from './components/UseImperativeHandleExample'
+import UseLayoutEffectExample from './components/UseLayoutEffectExample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
       {/* <UseReducerExample/> */}
       {/* <UseRefExample/> */}
       {/* <UseImperativeHandleExample/> */}
+      {/* <UseLayoutEffectExample/> */}
     </div>
   )
 }
