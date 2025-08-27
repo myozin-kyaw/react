@@ -17,7 +17,7 @@ export default function UseEffectExample() {
     
     return (
         <div>
-            <h1>UseEffectExample</h1>
+            <h1>useEffect() Example</h1>
 
             <div>
                 <label htmlFor="searchPost">Search Post : </label>

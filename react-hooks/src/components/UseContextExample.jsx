@@ -7,7 +7,7 @@ export default function UseContextExample() {
     return (
         <GlobalStateContext.Provider value={{isToggled, setIsToggled}}>
             <div>
-                <h1>Parent Component</h1>
+                <h1>useContext() Example</h1>
                 <ChildToggle/>
                 <ChildDisplay/>
             </div>

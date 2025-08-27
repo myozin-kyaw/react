@@ -3,6 +3,7 @@ import './App.css'
 import UseStateExample from './components/useStateExample'
 import UseEffectExample from './components/UseEffectExample'
 import UseContextExample from './components/UseContextExample'
+import UseReducerExample from './components/UseReducerExample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
       {/* <UseStateExample/> */}
       {/* <UseEffectExample/> */}
       {/* <UseContextExample/> */}
+      <UseReducerExample/>
     </div>
   )
 }
