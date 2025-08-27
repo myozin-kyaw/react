@@ -5,6 +5,7 @@ import UseEffectExample from './components/UseEffectExample'
 import UseContextExample from './components/UseContextExample'
 import UseReducerExample from './components/UseReducerExample'
 import UseRefExample from './components/UseRefExample'
+import UseImperativeHandleExample from './components/UseImperativeHandleExample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,8 @@ function App() {
       {/* <UseEffectExample/> */}
       {/* <UseContextExample/> */}
       {/* <UseReducerExample/> */}
-      <UseRefExample/>
+      {/* <UseRefExample/> */}
+      {/* <UseImperativeHandleExample/> */}
     </div>
   )
 }
