@@ -11,6 +11,7 @@ import UseInsertionEffectExample from './components/UseInsertionEffectExample'
 import UseIdExample from './components/UseIdExample'
 import UseTransitionExample from './components/UseTransitionExample'
 import UseDeferredValueExample from './components/UseDeferredValueExample'
+import UseSyncExternalStoreExample from './components/UseSyncExternalStoreExample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,7 +28,8 @@ function App() {
       {/* <UseInsertionEffectExample/> */}
       {/* <UseIdExample/> */}
       {/* <UseTransitionExample/> */}
-      <UseDeferredValueExample/>
+      {/* <UseDeferredValueExample/> */}
+      <UseSyncExternalStoreExample/>
     </div>
   )
 }
