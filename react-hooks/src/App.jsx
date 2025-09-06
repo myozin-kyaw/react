@@ -9,6 +9,7 @@ import UseImperativeHandleExample from './components/UseImperativeHandleExample'
 import UseLayoutEffectExample from './components/UseLayoutEffectExample'
 import UseInsertionEffectExample from './components/UseInsertionEffectExample'
 import UseIdExample from './components/UseIdExample'
+import UseTransitionExample from './components/UseTransitionExample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,7 +24,8 @@ function App() {
       {/* <UseImperativeHandleExample/> */}
       {/* <UseLayoutEffectExample/> */}
       {/* <UseInsertionEffectExample/> */}
-      <UseIdExample/>
+      {/* <UseIdExample/> */}
+      <UseTransitionExample/>
     </div>
   )
 }
